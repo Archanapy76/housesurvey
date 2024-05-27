@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getLocation(){
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(showPosition,showError);
+            }else{
+                alert("Geolocation is not supported by the browser")
+            }
+        }
+        function showPosition(position){
+            var latitude =position.coords.latitude;
+            var longitude =position.coords.longitude;
+            var locationInput=document.getElementById("location");
+            locationInput.value=""
+            locationInput.value=latitude+","+longitude;
+        }
+        function showError(error){
+            switch(error.code){
+                case error.PERMISSION_DENIED:
+                    alert("User denied the request for Geolocation.");
+                    break;
+                case error.POSITION_UNAVILABLE:
+                    alert("Location information is unavilable");
+                    break;
+                case error.TIMEOUT:
+                    alert("The request to get userlocation timeout");
+                case error.UNKNOWN_ERROR:
+                    alert("An unknown error occurred");
+                    break;        
+            }
+        }
+            
+        
+        
+    </script>
+</head>
+<body>
+    <form action="" method="POST">
+        {% csrf_token %}
+       <table>
+        <th>Add More Details</th>
+        <tr><td<label for="getlocation">Location</label></td><td><input type="text" id="location" name="location"></td></tr>
+        <tr><td><button id="getlocation" onclick="getLocation()">Getlocation</button></td></tr>
+        
+        <tr><td><label for="code">Code</label></td><td><input type="text" id="code" name="code"></td></tr>
+        <tr><td><label for="owner_phonenmber">Owner PhoneNumber</label></td><td><input type="text" id="owner_phonenumber" name="ownerphonenumber"></td></tr>
+        <tr><td><label for="occupier_address">Occupier Address </label></td><td><textarea rows="10",col='10' id="oa" name="occupier_address"></textarea></td></tr>
+        <tr><td><label for="ground_floor">Ground Floor</label></td><td><input type="text" id="gf" name="ground_floor"></td></tr>
+        <tr><td><label for="first_floor">First Floor</label></td><td><input type="text" id="ff" name="first_floor"></td></tr>
+        <tr><td><label for="Total">Total</label></td><td><input type="text" id="tt" name="total"></td></tr>
+        <tr><td><label for="difference">Difference</label></td><td><input type="text" id="diff" name="difference"></td></tr>
+        <tr><td><label for="percentage_difference">Percentage Difference</label></td><td><input type="text" id="pdiff" name="percentage_difference"></td></tr>
+        <tr><td><label for="building_usage">Building Usage</label></td><td><input type="text" id="bu" name="building_usage"></td></tr>
+        <tr><td><label for="remark">Remark</label></td><td><input type="text" id="remark" name="remark"></td></tr>
+        <tr><td></td><td><button id="save">Save</button></td></tr>
+       </table> 
+       
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,8 @@
+asgiref==3.8.1
+diff-match-patch==20230430
+Django==5.0.4
+django-import-export==4.0.2
+psycopg2-binary==2.9.9
+sqlparse==0.4.4
+tablib==3.5.0
+tzdata==2024.1

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Details</title>
+</head>
+<body>
+    <form action="\addmoredetails">
+     {% csrf_token %}  
+    <h1>Assessment Details</h1>
+    {% for elem in data %}
+    <table>
+        <tr><td><label for="ward_no">Ward Number</label></td><td>{{elem.new_wardno}}</td><td></td></tr>
+        <tr><td><label for="new_doorno">New DoorNo</label></td><td>{{elem.new_doorno}}</td><td></td></tr>
+        <tr><td><label for="new_subno">NewSubNo</label></td><td>{{elem.new_subno}}</td><td></td></tr>
+        <tr><td><label for="owner_address">OwnerAddress</label></td><td>{{elem.owner_address}}</td></tr>
+        <tr><td> <label for="floor_area">Floor Area</label></td><td>{{elem.floor_area}}</td></tr>
+        <tr><td><label for="building_usage">Building Usage</label></td><td>{{elem.building_usage}}</td></tr>
+        <tr><td><label for="zone">Zone</label></td><td>{{elem.zone}}</td></tr>
+        <tr><td><label for="road_type">Road Type</label></td><td>{{elem.road_type}}</td><td></td></tr>
+        <tr><td><label for="road_name">Road Name</label></td>{{elem.road_name}}<td></td></tr>
+        <tr><td><label for="building_age">Building age</label></td><td>{{elem.building_usage}}</td><td></td></tr>
+        <tr><td><label for="roof_details">Roof Details</label></td><td>{{elem.roof_details}}</td><td></td></tr>
+        <tr><td><label for="floordetails">Floor Details</label></td><td>{{elem.floordetails}}</td><td></td></tr>
+        <tr><td><label for="AC">AC</label></td><td>{{elem.Ac}}</td><td></td><td></td></tr>
+        <tr><td><label for="modification">Modification</label></td><td>{{elem.modification}}</td></tr>
+        <tr><td><a href=" {% url 'addmoredetails'  %}?new_doorno={{elem.new_doorno}}&new_subno={{elem.new_subno}}&new_wardno={{elem.new_wardno}}">Add More Details </a></td><td><a href=" {% url 'edit'  %}?new_doorno={{elem.new_doorno}}&new_subno={{elem.new_subno}}&new_wardno={{elem.new_wardno}}">Edit</a></td></tr>    
+    </table>
+    {% endfor %}
+</form>
+</body> 
+</html>   
+
+
+
+
+    
+    
+
+    
+            

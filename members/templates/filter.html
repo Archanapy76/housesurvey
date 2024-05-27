@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="\details" method="POST">
+        {% csrf_token %}
+        <label for="ward_no">Ward Number:</label>
+        <select id="ward_no" name="ward_no">
+            <option value="">Select Ward Number</option>
+            <option value="1">1-Thalore</option>
+            <option value="2">2-Thalore Parapuram</option>
+            <option value="3">3-Palikkara</option>
+            <option value="4">4-Pulakkattukara</option>
+            <option value="5">5-Nenmanikara</option>
+            <option value="6">6-Pazhayi</option>
+            <option value="7">7-Cheruval</option>
+            <option value="8">8-Pazhayi Center</option>
+            <option value="9">9-Pazhai West</option>
+            <option value="10">10-Madavakkara</option>
+            <option value="11">11-Chittissery South</option>
+            <option value="12">12-Eravakkad</option>
+            <option value="14">13-Chittisserry Center</option>
+            <option value="15">14-Kunnissery</option>
+            <option value="16">15-Chittissery North</option>
+            <!-- Add more options as needed -->
+        </select>
+
+        <label for="house_no">Door Number:</label>
+        <input type="text" id="door_no" name="door_no">
+
+        <label for="subno">New SubNumber</label>
+        <input type="text" id="subno" name="new_subno">
+
+            
+
+            <!-- Add more options as needed -->
+        </select>
+
+        <button type="submit">submit</button>
+        <a href="{% url 'field' %}">New Buliding Registration </a>
+    </form>
+</body>
+</html>
+

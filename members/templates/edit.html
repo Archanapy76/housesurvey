@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <form method="post">
+        {% csrf_token %}
+        <h1>Update</h1>
+        {% for elem in data %}
+        <table>
+            <tr><td><label for="ward_no"> New Ward Number:</label></td><td><input type="text" name="ward_no" value="{{elem.new_wardno}}"></td></tr>
+            <tr><td><label for="new_doorno">New Door Number</label></td><td><input type="text" name="new_doorno" value="{{elem.new_doorno}}"></td></tr>
+             <tr><td><label for="new_subno">New Sub Number</label></td><td><input type="text" name="new_subno" value="{{elem.new_subno}}"></td></tr>
+             <tr><td><label for="owner_address">Owner Address</label></td><td><input type="text" name="owner_address" value="{{elem.owner_address}}"></td></tr>
+             <tr><td><label for="floor_area">Floor Area</label></td><td><input type="text" name="floor_area" value="{{elem.floor_area}}"></td></tr>
+             <tr><td><label for="building_usage">Building Usage</label></td><td><input type="text"  name="building_usage" value="{{elem.building_usage}}"></td></tr>
+             <tr><td><label for="zone">Zone</label></td><td><input type="text" name="zone" value="{{elem.zone}}"></td></tr>
+             <tr><td><label for="road_type">Road Type</label></td><td><input type="text" name="roadtype" value="{{elem.road_type}}"></td></tr>
+             <tr><td><label for="road_name">Road Name</label></td><td><input type="text" name="road_name" value="{{elem.road_name}}"></td></tr>
+             <tr><td><label for="building_age">Building Age</label></td><td><input type="text" name="building_age" value="{{elem.buliding_age}}"></td></tr>
+             <tr><td><label for="roof_details">Roof Details</label></td><td><input type="text" name="roof_details" value="{{elem.roof_details}}"></td></tr>
+             <tr><td><label for="floordetails">Floor Details</label></td><td><input type="text" name="floordetails" value="{{elem.floor_details}}"></td></tr>
+             <tr><td><label for="Ac">AC</label></td><td><input type="text" name="Ac" value="{{elem.Ac}}"></td></tr>
+             <tr><td><label for="modification">Modification</label></td><td><input type="text" name="modification" value="{{elem.modification}}"></td></tr>
+             <tr><td></td><td><button id="save"  type="submit" formaction="\updatesave">Save</button></td></tr>
+        </table>
+        {% endfor %}
+    </form>    
+    
+</body>
+</html>
